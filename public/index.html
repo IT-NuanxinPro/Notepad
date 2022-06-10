@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<meta name = "viewport" content = "width=device-width,initial-scale=1.0">
+	<title>Vue记事本</title>
+	<style>
+	  [v-cloak]{
+		  display:none;
+	  }
+	</style>
+	<link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+   <div id="app">
+	   <a-layout class="layout">
+		   <a-layout-header class="top-bar animate__animated animate__slideInDown ">
+			   <span v-cloak>{{title}}</span>
+		   </a-layout-header>
+		   <a-layout-footer class="footer-bar animate__animated animate__bounceInLeft">
+			   <a-input-search
+							   v-model:value="searchContent"
+							   placeholder="请输入你的过滤内容"
+							   enter-button
+							   @search="onSearch">
+			   </a-input-search>
+		   </a-layout-footer>
+		   <a-layout-content class="content">
+			   <con-left :list="listData"
+			             @on-edit="edit"
+			             @on-del="del"
+			             @on-clear="clear"
+			             @on-loadMore="onLoadMore"
+			             class="animate__animated animate__fadeInLeftBig"
+			   ></con-left>
+			   <con-right :formdata="formData"
+			              @on-add="add"
+			              @on-update="update"
+			              @on-reserve="reserve"
+			              class="animate__animated animate__fadeInRightBig"
+			   ></con-right>
+		   </a-layout-content>
+	   </a-layout>
+   </div>
+</body>
+</html>

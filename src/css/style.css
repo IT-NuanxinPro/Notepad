@@ -1,0 +1,41 @@
+body{
+	background-color: #fefefe;
+}
+
+.layout{
+	height: 100vh;
+}
+
+.top-bar{
+	color: #fff;
+	background-image: linear-gradient(135deg,#314755,#26a0da);
+}
+
+.top-bar span{
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.content{
+	display: flex;
+	justify-content: space-between;
+	padding: 24px;
+	box-sizing: border-box;
+}
+
+.part{
+	height: 100%;
+	flex: 1;
+	background-color: #fff;
+	margin:0px 8px;
+	border-radius:12px ;
+	box-shadow: 0px 2px 8px rgb(50 50 50 / 0.1);
+	padding: 16px;
+	box-sizing: border-box;
+	overflow-y: scroll;
+}
+
+
+.footer-bar{
+	background-color: #fff;
+}
